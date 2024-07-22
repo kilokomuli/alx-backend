@@ -4,6 +4,10 @@ import csv
 import math
 from typing import List
 
+
+index_page = __import__('0-simple_helper_function').index_page
+
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -25,5 +29,11 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
+        Gets page data
         """
         assert isinstance(page, int and page_size, int) > 0
+        s_index, e_index = index_range(page, page_size)
+        data = self.dataset()
+        if s_index > len(data):
+            return []
+        return data[s_index:e_index]
