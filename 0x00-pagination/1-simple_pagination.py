@@ -31,7 +31,8 @@ class Server:
         """
         Gets page data
         """
-        assert isinstance(page, int and page_size, int) > 0
+        assert type(page) == int and type(page_size) == int
+        assert page > 0 and page_size > 0
         s_index, e_index = index_range(page, page_size)
         data = self.dataset()
         if s_index > len(data):
