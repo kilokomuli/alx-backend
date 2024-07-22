@@ -44,8 +44,8 @@ class Server:
         Gets hyper index
         """
         data = self.get_page(page, page_size)
-        data_length = len(self.dataset())
-        total_pages = math.ceil(data_length / page_size)
+        s_index, e_index = index_range(page, page_size)
+        total_pages = math.ceil(len(self.__dataset) / page_size)
         return {
             "page_size": len(data),
             "page": page,
