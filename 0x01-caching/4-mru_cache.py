@@ -12,7 +12,7 @@ class MRUCache(BaseCaching):
 
     def put(self, key, item):
         """Add an item in the cache"""
-        if key is not None and item is not None:
+        if key is not None or item is not None:
             if key in self.cache_data:
                 self.cache_data.move_to_end(key)
             elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
