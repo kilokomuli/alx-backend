@@ -49,6 +49,4 @@ class LFUCache(BaseCaching):
         self.freq[key] += 1
         self.freq_order[self.freq[key]][key] = item
 
-        return item
-
-        
+        return item        
