@@ -39,7 +39,7 @@ class Server:
             return []
         return data[s_index:e_index]
 
-    def get_hyper_index(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """
         Gets hyper index
         """
