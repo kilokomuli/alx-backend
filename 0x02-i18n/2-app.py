@@ -17,6 +17,7 @@ app.config.from_object(Config)
 app.url_map.strict_slashes = False
 babel = Babel(app)
 
+
 @babel.localeselector
 def get_locale():
     """Use request.accept_languages to determine
@@ -26,8 +27,8 @@ def get_locale():
 
 @app.route('/')
 def index() -> str:
-   """default route"""
-   return render_template("2-index.html")
+    """default route"""
+    return render_template("2-index.html")
 
 
 if __name__ == "__main__":
