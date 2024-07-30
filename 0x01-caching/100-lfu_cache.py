@@ -14,7 +14,7 @@ class LFUCache(BaseCaching):
         self.freq = defaultdict(int)
         self.freq_order = defaultdict(OrderedDict)
         self.min_freq = 0
-    
+
     def put(self, key, item):
         """Add an item in the cache"""
         if key is None or item is None:
@@ -49,4 +49,4 @@ class LFUCache(BaseCaching):
         self.freq[key] += 1
         self.freq_order[self.freq[key]][key] = item
 
-        return item        
+        return item
